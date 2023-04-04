@@ -4,6 +4,7 @@ use Illuminate\Console\View\Components\Task;
 use Illuminate\Support\Facades\Route;
 // use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\Task2Controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,7 +57,8 @@ Route::post('about', function () {
 
 
 Route::get('/tasks/{id}', [TaskController::class,'show']);
-Route::get('/tasks', [TaskController::class,'index']);
+Route::get('/tasks', [Task2Controller::class,'index']);
+// Route::get('tasks', 'TaskController@index');
 Route::get('app',function(){
     return view(('layout.app'));
 });
