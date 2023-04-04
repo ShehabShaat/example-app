@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('name') -> default('');
-            $table->string('email') -> unique();
+            $table->string('name');
+            // $table->string('email') -> unique();
             $table->timestamps();
         });
     }
@@ -30,4 +30,4 @@ return new class extends Migration
 };
 // يتم استدعا الاب والداون 
 // في عملية الاب تستدعى عند الانشاء
-//  عنجد الحذف والتعديل  بنستعمل داون
+//  عند الحذف والتعديل  بنستعمل داون

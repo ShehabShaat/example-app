@@ -10,14 +10,12 @@
 
 <body>
 
-    <center>
         <h1>Hello, {{ $name }}</h1>
         <form action="about" method="post">
             @csrf
             <input type="text" name="name" id="">
             <input type="submit" value="Send">
         </form>
-    </center>
 
 </body>
 

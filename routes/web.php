@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Console\View\Components\Task;
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\TaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +35,33 @@ Route::post('about', function () {
     return view('about',compact('name'));
 });
 
-Route::get('tasks', function () {
-    $tasks = ['Task #1', 'Task #2', 'Task #3'];
-    return view('tasks', compact('tasks'));
+// Route::get('tasks', function () {
+//     $tasks = ['Task #1', 'Task #2', 'Task #3'];
+//     return view('tasks', compact('tasks'));
+// });
+
+// Route::get('tasks', function () {
+//     //$tasks = ['Task #1', 'Task #2', 'Task #3'];
+//     $tasks = DB::table('tasks')->where('name','like','task1%')-> get();
+//     return view('tasks', compact('tasks'));
+// });
+
+
+//     //$tasks = ['Task #1', 'Task #2', 'Task #3'];
+//     $tasks = DB::table('tasks')->find($id);
+//     return view('name');
+// });
+
+// Route::get(/)
+
+
+Route::get('/tasks/{id}', [TaskController::class,'show']);
+Route::get('/tasks', [TaskController::class,'index']);
+Route::get('app',function(){
+    return view(('layout.app'));
+});
+
+
+Route::get('taskPage',function(){
+    return view(('taskPage'));
 });
